@@ -1,0 +1,155 @@
+#h1 {   
+    position: absolute; 
+    text-align: center;
+    z-index: 2;
+    top: 5px;
+    left: 72px;
+    color: azure;
+    text-decoration: underline;
+    
+        }
+.skills {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+    
+        }
+.page, 
+.skills{
+    background-color: transparent;
+
+}
+.skill1 {
+    padding: 70px;
+    border-radius: 40px;
+    text-align: center;
+    margin-bottom: 18px;
+    background-image: url(images/tech.jpg);
+    background-position: center;
+    background-size: cover;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+.skill1:hover{
+    background-color: beige;
+    transition: 0.8s;
+    transform: translateY(-7px);
+    opacity: 1;
+}
+
+.skill2 {
+    padding: 70px;
+    border-radius: 40px;
+    text-align: center;
+    margin-bottom: 18px;
+    background-image: url(images/cultural.jpg);
+    background-position: center;
+    background-size: cover;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+.skill2:hover{
+    background-color: beige;
+    transition: 0.8s;
+    transform: translateY(-7px);
+    opacity: 1;
+}
+.skill3 {
+    padding: 70px;
+    border-radius: 40px;
+    text-align: center;
+    margin-bottom: 18px;
+    background-image: url(images/eco.jpg);
+    background-position: center;
+    background-size: cover;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+.skill3:hover{
+    background-color: beige;
+    transition: 0.8s;
+    transform: translateY(-7px);
+    opacity: 1;
+}
+.skill4 {
+    padding: 70px;
+    border-radius: 40px;
+    text-align: center;
+    margin-bottom: 18px;
+    background-image: url(images/sports.jpg);
+    background-position: center;
+    background-size: cover;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+.skill4:hover{
+    background-color: beige;
+    transition: 0.8s;
+    transform: translateY(-7px);
+    opacity: 1;
+}
+img {
+    position: absolute;
+     width: 90px;
+     border-radius: 45px;
+     object-fit: cover;
+     z-index: 1;
+     left: 360px;
+        }
+h1 {
+    margin-left: 377px;
+        }
+.image{
+    position:relative;
+    height: 100px;
+    width: 100%;
+}
+#p1 {
+    text-align: center;
+    font-family: cursive;
+    font-size: x-large;
+    text-decoration: underline;
+  }
+.divider {
+    height:2px;
+    width : 100%;
+    background-color: goldenrod;
+
+}
+#p2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: underline;
+   
+    
+}
+#p5 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: underline;
+}
+#p3 {
+    text-decoration: solid ;
+    font-size: 105% ;
+}
+#p4 {
+    font-size: 105%;
+}
+.select {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    text-align: center;
+    font-family: cursive;
+    text-decoration: underline;
+
+}
+.page {
+    width:100%;
+    height: 100%;
+    opacity:100%;
+    background-image:  url(images/FINAL.jpeg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
