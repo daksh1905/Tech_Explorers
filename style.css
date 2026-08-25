@@ -3,86 +3,117 @@
     text-align: center;
     z-index: 2;
     top: 5px;
-    left: 72px;
+    left: 90px;
     color: azure;
     text-decoration: underline;
     
         }
-.skills {
+.events {
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    gap: 10px;
+    gap: 20px;
+    align-items: center;
     
         }
 .page, 
-.skills{
+.events{
     background-color: transparent;
 
 }
-.skill1 {
-    padding: 70px;
+.event1 {
+    height:300px;
+    width: 540px;
     border-radius: 40px;
     text-align: center;
     margin-bottom: 18px;
-    background-image: url(images/tech.jpg);
+    background-image: url(images/hackathon.jpeg);
     background-position: center;
     background-size: cover;
     opacity: 0.8;
     transition: opacity 0.3s ease;
+    margin-left: 120px;
 }
-.skill1:hover{
+.event1:hover{
     background-color: beige;
     transition: 0.8s;
     transform: translateY(-7px);
     opacity: 1;
 }
 
-.skill2 {
-    padding: 70px;
+.event2 {
+    height: 300px;
+    width: 540px;
     border-radius: 40px;
     text-align: center;
     margin-bottom: 18px;
-    background-image: url(images/cultural.jpg);
+    background-image: url(images/esport.jpeg);
     background-position: center;
     background-size: cover;
     opacity: 0.8;
     transition: opacity 0.3s ease;
+    margin-left: 60px;
 }
-.skill2:hover{
+.event2:hover{
     background-color: beige;
     transition: 0.8s;
     transform: translateY(-7px);
     opacity: 1;
 }
-.skill3 {
-    padding: 70px;
+.event3 {
+    height: 300px;
+    width: 540px;
     border-radius: 40px;
     text-align: center;
     margin-bottom: 18px;
-    background-image: url(images/eco.jpg);
+    background-image: url(images/ctf.jpeg);
     background-position: center;
     background-size: cover;
     opacity: 0.8;
     transition: opacity 0.3s ease;
+    margin-left: 120px;
 }
-.skill3:hover{
+.event3:hover{
     background-color: beige;
     transition: 0.8s;
     transform: translateY(-7px);
     opacity: 1;
 }
-.skill4 {
-    padding: 70px;
+.event4 {
+    height: 300px;
+    width: 540px;
     border-radius: 40px;
     text-align: center;
     margin-bottom: 18px;
-    background-image: url(images/sports.jpg);
+    background-image: url(images/treasurehunt.jpeg);
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    margin-left: 60px;
+}
+.event4:hover{
+    background-color: beige;
+    transition: 0.8s;
+    transform: translateY(-7px);
+    opacity: 1;
+}
+.event5 {
+    height: 300px;
+    width: 540px;
+    border-radius: 40px;
+    text-align: center;
+    margin-bottom: 18px;
+    background-image: url(images/workshop.jpeg);
     background-position: center;
     background-size: cover;
     opacity: 0.8;
     transition: opacity 0.3s ease;
+    margin-left: 120px;
+
+    
 }
-.skill4:hover{
+.event5:hover{
     background-color: beige;
     transition: 0.8s;
     transform: translateY(-7px);
@@ -106,9 +137,11 @@ h1 {
 }
 #p1 {
     text-align: center;
-    font-family: cursive;
-    font-size: x-large;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 50PX;
+    right:20px;
     text-decoration: underline;
+    color:whitesmoke;
   }
 .divider {
     height:2px;
@@ -118,7 +151,10 @@ h1 {
 }
 #p2 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-decoration: underline;
+    color:violet;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: x-large;
+    
    
     
 }
@@ -148,8 +184,27 @@ h1 {
     width:100%;
     height: 100%;
     opacity:100%;
-    background-image:  url(images/FINAL.jpeg);
+    background-image:  url(/Tech_Explorers/images/bg.jpeg);
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+}
+.a{
+    text-align: center;
+
+}
+.ab{
+color: azure;
+text-align: center;
+font-size:medium;
+}
+.dc{
+    color: azure;
+    text-align: center;
+    font-size: larger;
+}
+.abc{
+    height: 2px;
+    width:200px;
+    background-color: darkmagenta;
 }
