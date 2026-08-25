@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schedule Section</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0e1a;
+    --line:rgba(237,239,245,0.09);
+    --line-strong:rgba(237,239,245,0.16);
+    --amber:#ffb648;
+    --mint:#4fe3c1;
+    --violet:#8c7cff;
+    --text:#edeff5;
+    --muted:#8b93aa;
+    --faint:#5a6379;
+  }
+  *{margin:0; padding:0; box-sizing:border-box;}
+  body{
+    background:var(--ink);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+    padding:90px 24px;
+  }
+  .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--muted);
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+  }
+  .eyebrow .dot{
+    width:6px; height:6px; border-radius:50%;
+    background:var(--mint);
+    box-shadow:0 0 0 3px rgba(79,227,193,0.18);
+  }
+
+  #schedule h2{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    letter-spacing:-0.01em;
+    margin-top:12px;
+    margin-bottom:12px;
+    font-size:clamp(26px,3.4vw,36px);
+  }
+  #schedule > .wrap > p{
+    color:var(--muted);
+    font-size:15.5px;
+    max-width:480px;
+    margin-bottom:36px;
+  }
+
+  /* day tabs */
+  .day-tabs{display:flex; gap:10px; margin-bottom:34px;}
+  .day-tab{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    padding:10px 18px;
+    border:1px solid var(--line-strong);
+    border-radius:8px;
+    color:var(--muted);
+    background:transparent;
+    cursor:pointer;
+    transition:background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .day-tab:hover{color:var(--text);}
+  .day-tab.active{background:var(--violet); color:#0a0e1a; border-color:var(--violet);}
+
+  /* timeline */
+  .timeline{max-width:640px;}
+  .t-row{
+    display:grid;
+    grid-template-columns:90px 1fr;
+    gap:20px;
+    padding:16px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .t-row:last-child{border-bottom:none;}
+  .t-time{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--mint);
+    font-size:14px;
+    font-weight:500;
+    padding-top:1px;
+  }
+  .t-body h4{
+    font-size:15.5px;
+    font-weight:600;
+    margin-bottom:2px;
+  }
+  .t-body span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--faint);
+  }
+
+  .sample-note{
+    font-size:12.5px;
+    color:var(--faint);
+    font-style:italic;
+    margin-top:22px;
+    max-width:640px;
+  }
+
+  /* simple fade-up */
+  .reveal{
+    opacity:0;
+    transform:translateY(20px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  .reveal.in{opacity:1; transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<section id="schedule">
+  <div class="wrap">
+    <span class="eyebrow reveal"><span class="dot"></span>Run of Show</span>
+    <h2 class="reveal">Two days, mapped out.</h2>
+    <p class="reveal">A sample of how the fest flows — exact timings will be confirmed closer to the date.</p>
+
+    <div class="day-tabs reveal">
+      <button class="day-tab active" data-day="1">Day 1 · Oct 12</button>
+      <button class="day-tab" data-day="2">Day 2 · Oct 13</button>
+    </div>
+
+    <div class="timeline reveal" id="timeline"></div>
+
+    <p class="sample-note reveal">This is a sample schedule for reference — final timings will be shared before the event.</p>
+  </div>
+</section>
+
+<script>
+  const schedule = {
+    1: [
+      { t: '09:00', title: 'Opening Ceremony', v: 'Main Auditorium' },
+      { t: '10:00', title: 'Hackathon Begins', v: 'Innovation Lab' },
+      { t: '11:00', title: 'Treasure Hunt', v: 'Campus Grounds' },
+      { t: '13:00', title: 'Lunch Break', v: 'Food Court' },
+      { t: '14:00', title: 'E-Sports Arena', v: 'Lab 2' },
+      { t: '16:00', title: 'CTF Challenge', v: 'Open Ground' },
+      { t: '18:00', title: 'Day 1 Wrap · Hackathon Submissions Close', v: 'Innovation Lab' }
+    ],
+    2: [
+      { t: '09:30', title: 'Workshop Sessions', v: 'Seminar Hall' },
+      { t: '12:00', title: 'Judging & Deliberation', v: 'Innovation Lab' },
+      { t: '13:00', title: 'Winner Announcements', v: 'Main Auditorium' },
+      { t: '14:00', title: 'Closing Ceremony', v: 'Main Auditorium' }
+    ]
+  };
+
+  const timeline = document.getElementById('timeline');
+  function renderDay(day) {
+    timeline.innerHTML = schedule[day].map(row => `
+      <div class="t-row">
+        <div class="t-time">${row.t}</div>
+        <div class="t-body">
+          <h4>${row.title}</h4>
+          <span>${row.v}</span>
+        </div>
+      </div>
+    `).join('');
+  }
+  renderDay(1);
+
+  document.querySelectorAll('.day-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.day-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      renderDay(tab.dataset.day);
+    });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
+
+</body>
+</html>
