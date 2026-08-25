@@ -1,160 +1,1002 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sponsor Wall</title>
+<!-- =========================================================
+     NIRVAN'25 SPONSOR WALL
+     Self-contained HTML + CSS
+     Paste this directly into your existing website
+========================================================= -->
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<section id="nirvan-sponsors">
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
-      color: #111827;
-    }
+    <style>
+        /* ===============================
+           SPONSOR WALL
+        =============================== */
 
-    .sponsor-page {
-      width: 100%;
-      min-height: 100vh;
-      padding: 26px 16px 40px;
-    }
+        #nirvan-sponsors {
+            --orange: #ff9418;
+            --blue: #4f7cff;
+            --purple: #a05cff;
 
-    .page-title {
-      font-size: 36px;
-      line-height: 1.15;
-      font-weight: 800;
-      color: #f59a00;
-      margin-bottom: 74px;
-      letter-spacing: -0.5px;
-    }
+            position: relative;
+            overflow: hidden;
 
-    .sponsor-section {
-      width: 100%;
-      padding-bottom: 28px;
-      margin-bottom: 32px;
-      border-bottom: 2px solid #e5e7eb;
-    }
+            width: 100%;
+            padding: 90px 0 110px;
 
-    .section-title {
-      font-size: 26px;
-      line-height: 1.2;
-      font-weight: 800;
-      margin-bottom: 17px;
-    }
+            color: #ffffff;
 
-    .title-sponsor .section-title {
-      color: #f59a00;
-    }
+            background:
+                radial-gradient(
+                    circle at 8% 8%,
+                    rgba(255, 148, 24, 0.14),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 92% 35%,
+                    rgba(79, 124, 255, 0.12),
+                    transparent 30%
+                ),
+                #07080d;
 
-    .gold-sponsor .section-title {
-      color: #3168e8;
-    }
+            font-family:
+                Inter,
+                Arial,
+                Helvetica,
+                sans-serif;
 
-    .community-partners .section-title {
-      color: #7c3aed;
-    }
+            box-sizing: border-box;
+        }
 
-    .sponsor-list {
-      font-size: 27px;
-      line-height: 1.25;
-      font-weight: 700;
-      color: #111827;
-      letter-spacing: -0.5px;
-    }
+        #nirvan-sponsors *,
+        #nirvan-sponsors *::before,
+        #nirvan-sponsors *::after {
+            box-sizing: border-box;
+        }
 
-    .sponsor-list span {
-      display: inline;
-    }
 
-    @media (max-width: 700px) {
-      .sponsor-page {
-        padding: 22px 16px 32px;
-      }
+        /* ===============================
+           BACKGROUND EFFECTS
+        =============================== */
 
-      .page-title {
-        font-size: 30px;
-        margin-bottom: 55px;
-      }
+        #nirvan-sponsors .ns-circle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
 
-      .section-title {
-        font-size: 22px;
-      }
+        #nirvan-sponsors .ns-circle-orange {
+            width: 500px;
+            height: 500px;
 
-      .sponsor-list {
-        font-size: 22px;
-        line-height: 1.5;
-      }
+            right: -250px;
+            top: 50px;
 
-      .sponsor-section {
-        padding-bottom: 24px;
-        margin-bottom: 26px;
-      }
-    }
+            border: 1px solid rgba(255,148,24,.10);
 
-    @media (max-width: 420px) {
-      .page-title {
-        font-size: 27px;
-      }
+            box-shadow:
+                0 0 0 70px rgba(255,148,24,.025),
+                0 0 0 140px rgba(255,148,24,.015);
+        }
 
-      .section-title {
-        font-size: 20px;
-      }
+        #nirvan-sponsors .ns-circle-blue {
+            width: 500px;
+            height: 500px;
 
-      .sponsor-list {
-        font-size: 19px;
-      }
-    }
-  </style>
-</head>
+            left: -300px;
+            bottom: -300px;
 
-<body>
+            border: 1px solid rgba(79,124,255,.10);
+        }
 
-  <main class="sponsor-page">
 
-    <h1 class="page-title">SPONSOR WALL</h1>
+        /* ===============================
+           CONTAINER
+        =============================== */
 
-    <section class="sponsor-section title-sponsor">
-      <h2 class="section-title">TITLE SPONSOR</h2>
+        #nirvan-sponsors .ns-container {
+            position: relative;
+            z-index: 2;
 
-      <div class="sponsor-list">
-        <span>TechCorp</span>
-        <span> • </span>
-        <span>Zepto</span>
-      </div>
-    </section>
+            width: min(1200px, calc(100% - 40px));
 
-    <section class="sponsor-section gold-sponsor">
-      <h2 class="section-title">GOLD SPONSORS</h2>
+            margin: 0 auto;
+        }
 
-      <div class="sponsor-list">
-        <span>DevLabs</span>
-        <span> • </span>
-        <span>CloudNova</span>
-        <span> • </span>
-        <span>.xyz</span>
-        <span> • </span>
-        <span>lovable.Ai</span>
-        <span> • </span>
-        <span>HackNest</span>
-      </div>
-    </section>
 
-    <section class="sponsor-section community-partners">
-      <h2 class="section-title">COMMUNITY PARTNERS</h2>
+        /* ===============================
+           HERO
+        =============================== */
 
-      <div class="sponsor-list">
-        <span>GitHub Community</span>
-        <span> • </span>
-        <span>GDG</span>
-      </div>
-    </section>
+        #nirvan-sponsors .ns-hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
 
-  </main>
+            gap: 50px;
 
-</body>
-</html>
+            margin-bottom: 65px;
+        }
+
+        #nirvan-sponsors .ns-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            margin-bottom: 22px;
+
+            color: var(--orange);
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        #nirvan-sponsors .ns-eyebrow::before {
+            content: "";
+
+            width: 30px;
+            height: 2px;
+
+            background: var(--orange);
+        }
+
+        #nirvan-sponsors .ns-hero h1 {
+            margin: 0;
+
+            color: #ffffff;
+
+            font-size: clamp(60px, 10vw, 120px);
+            line-height: .82;
+
+            font-weight: 900;
+
+            letter-spacing: -7px;
+        }
+
+        #nirvan-sponsors .ns-hero h1 span {
+            color: var(--orange);
+        }
+
+        #nirvan-sponsors .ns-hero-text {
+            max-width: 370px;
+
+            margin: 0;
+
+            color: #858792;
+
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+
+        /* ===============================
+           EVENT BAR
+        =============================== */
+
+        #nirvan-sponsors .ns-event-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 20px;
+
+            margin-bottom: 80px;
+            padding: 20px 24px;
+
+            border: 1px solid rgba(255,255,255,.08);
+
+            background: rgba(255,255,255,.025);
+
+            backdrop-filter: blur(10px);
+        }
+
+        #nirvan-sponsors .ns-event-name {
+            color: #ffffff;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            letter-spacing: 3px;
+        }
+
+        #nirvan-sponsors .ns-event-type {
+            color: #696c77;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+
+        /* ===============================
+           SECTION
+        =============================== */
+
+        #nirvan-sponsors .ns-section {
+            margin-bottom: 80px;
+        }
+
+        #nirvan-sponsors .ns-section-heading {
+            display: flex;
+            align-items: center;
+
+            gap: 18px;
+
+            margin-bottom: 25px;
+        }
+
+        #nirvan-sponsors .ns-number {
+            color: #555862;
+
+            font-size: 11px;
+            font-weight: 800;
+
+            letter-spacing: 2px;
+        }
+
+        #nirvan-sponsors .ns-section-title {
+            margin: 0;
+
+            font-size: 14px;
+            font-weight: 900;
+
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        #nirvan-sponsors .ns-line {
+            flex: 1;
+
+            height: 1px;
+
+            background: rgba(255,255,255,.09);
+        }
+
+        #nirvan-sponsors .ns-title-section .ns-section-title {
+            color: var(--orange);
+        }
+
+        #nirvan-sponsors .ns-gold-section .ns-section-title {
+            color: var(--blue);
+        }
+
+        #nirvan-sponsors .ns-community-section .ns-section-title {
+            color: var(--purple);
+        }
+
+
+        /* ===============================
+           TITLE SPONSORS
+        =============================== */
+
+        #nirvan-sponsors .ns-title-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        #nirvan-sponsors .ns-title-card {
+            position: relative;
+
+            min-height: 270px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            padding: 32px;
+
+            overflow: hidden;
+
+            border: 1px solid rgba(255,148,24,.25);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,148,24,.13),
+                    rgba(255,255,255,.025)
+                );
+
+            transition:
+                transform .35s ease,
+                border-color .35s ease,
+                box-shadow .35s ease;
+        }
+
+        #nirvan-sponsors .ns-title-card::before {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+
+            width: 100%;
+            height: 3px;
+
+            background: var(--orange);
+        }
+
+        #nirvan-sponsors .ns-title-card:hover {
+            transform: translateY(-7px);
+
+            border-color: var(--orange);
+
+            box-shadow:
+                0 25px 60px rgba(255,148,24,.13);
+        }
+
+        #nirvan-sponsors .ns-label {
+            display: block;
+
+            color: var(--orange);
+
+            font-size: 10px;
+            font-weight: 800;
+
+            letter-spacing: 3px;
+        }
+
+        #nirvan-sponsors .ns-title-card h3 {
+            margin: 30px 0 8px;
+
+            color: #ffffff;
+
+            font-size: clamp(38px, 5vw, 60px);
+            line-height: 1;
+
+            letter-spacing: -3px;
+        }
+
+        #nirvan-sponsors .ns-title-card p {
+            margin: 0;
+
+            color: #777984;
+
+            font-size: 12px;
+        }
+
+        #nirvan-sponsors .ns-arrow {
+            color: var(--orange);
+
+            font-size: 28px;
+
+            transition: transform .3s ease;
+        }
+
+        #nirvan-sponsors .ns-title-card:hover .ns-arrow {
+            transform: translate(6px,-6px);
+        }
+
+
+        /* ===============================
+           GOLD SPONSORS
+        =============================== */
+
+        #nirvan-sponsors .ns-gold-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap: 14px;
+        }
+
+        #nirvan-sponsors .ns-gold-card {
+            position: relative;
+
+            min-height: 200px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            padding: 22px;
+
+            border: 1px solid rgba(79,124,255,.18);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(79,124,255,.09),
+                    rgba(255,255,255,.015)
+                );
+
+            transition:
+                transform .3s ease,
+                border-color .3s ease,
+                background .3s ease;
+        }
+
+        #nirvan-sponsors .ns-gold-card:hover {
+            transform: translateY(-6px);
+
+            border-color: var(--blue);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(79,124,255,.17),
+                    rgba(255,255,255,.03)
+                );
+        }
+
+        #nirvan-sponsors .ns-dot {
+            position: absolute;
+
+            top: 18px;
+            right: 18px;
+
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: var(--blue);
+
+            box-shadow:
+                0 0 15px var(--blue);
+        }
+
+        #nirvan-sponsors .ns-gold-card h3 {
+            margin: 0;
+
+            color: #f5f7ff;
+
+            font-size: 22px;
+
+            letter-spacing: -1px;
+
+            word-break: break-word;
+        }
+
+        #nirvan-sponsors .ns-gold-card p {
+            margin: 8px 0 0;
+
+            color: #666a77;
+
+            font-size: 11px;
+        }
+
+
+        /* ===============================
+           COMMUNITY PARTNERS
+        =============================== */
+
+        #nirvan-sponsors .ns-community-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 14px;
+        }
+
+        #nirvan-sponsors .ns-community-card {
+            display: flex;
+            align-items: center;
+
+            gap: 20px;
+
+            min-height: 130px;
+
+            padding: 24px;
+
+            border: 1px solid rgba(160,92,255,.2);
+
+            background:
+                rgba(160,92,255,.045);
+
+            transition:
+                transform .3s ease,
+                border-color .3s ease;
+        }
+
+        #nirvan-sponsors .ns-community-card:hover {
+            transform: translateY(-5px);
+
+            border-color: var(--purple);
+        }
+
+        #nirvan-sponsors .ns-community-icon {
+            width: 58px;
+            height: 58px;
+
+            display: grid;
+            place-items: center;
+
+            flex-shrink: 0;
+
+            color: var(--purple);
+
+            border: 1px solid rgba(160,92,255,.4);
+
+            background:
+                rgba(160,92,255,.1);
+
+            font-size: 16px;
+            font-weight: 900;
+        }
+
+        #nirvan-sponsors .ns-community-card h3 {
+            margin: 0;
+
+            color: #ffffff;
+
+            font-size: 20px;
+        }
+
+        #nirvan-sponsors .ns-community-card p {
+            margin: 6px 0 0;
+
+            color: #696c77;
+
+            font-size: 11px;
+        }
+
+
+        /* ===============================
+           THANK YOU
+        =============================== */
+
+        #nirvan-sponsors .ns-thank-you {
+            margin-top: 100px;
+
+            padding: 75px 30px;
+
+            text-align: center;
+
+            border-top: 1px solid rgba(255,255,255,.08);
+            border-bottom: 1px solid rgba(255,255,255,.08);
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255,148,24,.09),
+                    transparent 60%
+                );
+        }
+
+        #nirvan-sponsors .ns-thank-label {
+            color: var(--orange);
+
+            font-size: 11px;
+            font-weight: 800;
+
+            letter-spacing: 4px;
+        }
+
+        #nirvan-sponsors .ns-thank-you h2 {
+            margin: 20px 0 0;
+
+            color: #ffffff;
+
+            font-size: clamp(36px, 6vw, 70px);
+
+            line-height: 1;
+
+            letter-spacing: -4px;
+        }
+
+        #nirvan-sponsors .ns-thank-you h2 span {
+            color: var(--orange);
+        }
+
+        #nirvan-sponsors .ns-thank-you p {
+            max-width: 600px;
+
+            margin: 25px auto 0;
+
+            color: #777984;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+
+        /* ===============================
+           TABLET
+        =============================== */
+
+        @media (max-width: 950px) {
+
+            #nirvan-sponsors .ns-gold-grid {
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+        }
+
+
+        /* ===============================
+           MOBILE
+        =============================== */
+
+        @media (max-width: 700px) {
+
+            #nirvan-sponsors {
+                padding: 60px 0 80px;
+            }
+
+            #nirvan-sponsors .ns-container {
+                width: calc(100% - 28px);
+            }
+
+            #nirvan-sponsors .ns-hero {
+                flex-direction: column;
+                align-items: flex-start;
+
+                gap: 30px;
+
+                margin-bottom: 50px;
+            }
+
+            #nirvan-sponsors .ns-hero h1 {
+                letter-spacing: -4px;
+            }
+
+            #nirvan-sponsors .ns-event-bar {
+                flex-direction: column;
+                align-items: flex-start;
+
+                margin-bottom: 60px;
+            }
+
+            #nirvan-sponsors .ns-title-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #nirvan-sponsors .ns-gold-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            #nirvan-sponsors .ns-community-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        /* ===============================
+           SMALL MOBILE
+        =============================== */
+
+        @media (max-width: 450px) {
+
+            #nirvan-sponsors .ns-gold-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #nirvan-sponsors .ns-title-card {
+                min-height: 230px;
+
+                padding: 25px;
+            }
+
+            #nirvan-sponsors .ns-title-card h3 {
+                font-size: 42px;
+            }
+
+            #nirvan-sponsors .ns-section-heading {
+                gap: 12px;
+            }
+
+            #nirvan-sponsors .ns-section-title {
+                font-size: 11px;
+                letter-spacing: 2px;
+            }
+
+            #nirvan-sponsors .ns-thank-you {
+                padding: 55px 18px;
+            }
+
+        }
+
+    </style>
+
+
+    <!-- BACKGROUND DECORATION -->
+    <div class="ns-circle ns-circle-orange"></div>
+    <div class="ns-circle ns-circle-blue"></div>
+
+
+    <div class="ns-container">
+
+        <!-- HERO -->
+        <div class="ns-hero">
+
+            <div>
+
+                <div class="ns-eyebrow">
+                    NIRVAN'25 · GRAPHIC ERA
+                </div>
+
+                <h1>
+                    OUR
+                    <br>
+                    <span>SPONSORS.</span>
+                </h1>
+
+            </div>
+
+            <p class="ns-hero-text">
+                The brands, organizations and communities
+                that helped make Nirvan'25 possible.
+            </p>
+
+        </div>
+
+
+        <!-- EVENT BAR -->
+        <div class="ns-event-bar">
+
+            <span class="ns-event-name">
+                NIRVAN'25
+            </span>
+
+            <span class="ns-event-type">
+                Technology · Creativity · Community
+            </span>
+
+        </div>
+
+
+        <!-- TITLE SPONSORS -->
+        <section class="ns-section ns-title-section">
+
+            <div class="ns-section-heading">
+
+                <span class="ns-number">
+                    01
+                </span>
+
+                <h2 class="ns-section-title">
+                    Title Sponsors
+                </h2>
+
+                <div class="ns-line"></div>
+
+            </div>
+
+
+            <div class="ns-title-grid">
+
+                <div class="ns-title-card">
+
+                    <div>
+
+                        <span class="ns-label">
+                            TITLE SPONSOR
+                        </span>
+
+                        <h3>
+                            TechCorp
+                        </h3>
+
+                        <p>
+                            Technology Partner
+                        </p>
+
+                    </div>
+
+                    <span class="ns-arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+
+                <div class="ns-title-card">
+
+                    <div>
+
+                        <span class="ns-label">
+                            TITLE SPONSOR
+                        </span>
+
+                        <h3>
+                            Zepto
+                        </h3>
+
+                        <p>
+                            Official Title Partner
+                        </p>
+
+                    </div>
+
+                    <span class="ns-arrow">
+                        ↗
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- GOLD SPONSORS -->
+        <section class="ns-section ns-gold-section">
+
+            <div class="ns-section-heading">
+
+                <span class="ns-number">
+                    02
+                </span>
+
+                <h2 class="ns-section-title">
+                    Gold Sponsors
+                </h2>
+
+                <div class="ns-line"></div>
+
+            </div>
+
+
+            <div class="ns-gold-grid">
+
+                <div class="ns-gold-card">
+                    <span class="ns-dot"></span>
+
+                    <h3>
+                        DevLabs
+                    </h3>
+
+                    <p>
+                        Gold Sponsor
+                    </p>
+                </div>
+
+
+                <div class="ns-gold-card">
+                    <span class="ns-dot"></span>
+
+                    <h3>
+                        CloudNova
+                    </h3>
+
+                    <p>
+                        Cloud Partner
+                    </p>
+                </div>
+
+
+                <div class="ns-gold-card">
+                    <span class="ns-dot"></span>
+
+                    <h3>
+                        .xyz
+                    </h3>
+
+                    <p>
+                        Domain Partner
+                    </p>
+                </div>
+
+
+                <div class="ns-gold-card">
+                    <span class="ns-dot"></span>
+
+                    <h3>
+                        lovable.Ai
+                    </h3>
+
+                    <p>
+                        AI Partner
+                    </p>
+                </div>
+
+
+                <div class="ns-gold-card">
+                    <span class="ns-dot"></span>
+
+                    <h3>
+                        HackNest
+                    </h3>
+
+                    <p>
+                        Innovation Partner
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- COMMUNITY PARTNERS -->
+        <section class="ns-section ns-community-section">
+
+            <div class="ns-section-heading">
+
+                <span class="ns-number">
+                    03
+                </span>
+
+                <h2 class="ns-section-title">
+                    Community Partners
+                </h2>
+
+                <div class="ns-line"></div>
+
+            </div>
+
+
+            <div class="ns-community-grid">
+
+                <div class="ns-community-card">
+
+                    <div class="ns-community-icon">
+                        GH
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            GitHub Community
+                        </h3>
+
+                        <p>
+                            Community Partner
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ns-community-card">
+
+                    <div class="ns-community-icon">
+                        GD
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            GDG
+                        </h3>
+
+                        <p>
+                            Developer Community Partner
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- THANK YOU -->
+        <section class="ns-thank-you">
+
+            <div class="ns-thank-label">
+                WITH GRATITUDE
+            </div>
+
+            <h2>
+                Built together.
+                <br>
+                <span>Powered by community.</span>
+            </h2>
+
+            <p>
+                Thank you to every sponsor and community
+                partner who supported Nirvan'25.
+            </p>
+
+        </section>
+
+    </div>
+
+</section>
